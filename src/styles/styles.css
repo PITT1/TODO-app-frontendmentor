@@ -1,0 +1,16 @@
+.fondo{
+    background-image: url(../images/bg-desktop-dark.jpg);
+    object-fit: cover;
+}
+
+.chekbox {
+    background-image: url(../images/icon-cross.svg);
+}
+
+@media screen and (max-width: 640px){
+    .fondo {
+        background-image: url(../images/bg-mobile-dark.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

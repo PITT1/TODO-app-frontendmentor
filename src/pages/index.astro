@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Todo } from '../components/Todo';
+---
+
+<Layout title="TODO app">
+	<main class="w-screen">
+		<Todo client:load/>
+	</main>
+</Layout>
+
