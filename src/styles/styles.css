@@ -10,12 +10,11 @@
 }
 
 .chekbox {
-    background-image: url(../images/icon-check.svg);
     background-repeat: no-repeat;
 }
 
 .border-item {
-    border-bottom: 1px solid rgba(155, 155, 155, 0.329);
+    border-top: 1px solid rgba(155, 155, 155, 0.329);
 }
 
 @media screen and (max-width: 640px){
