@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/styles.css";
 
 export const Todo = () => {
@@ -6,8 +6,21 @@ export const Todo = () => {
 
     const handleChange = (event) => {
         setNewToDo(event.target.value)
-        console.log(newToDo);
     }
+
+    useEffect(() => {
+        console.log(newToDo);
+    }, [newToDo]);
+
+    const createNewItem = () => {
+        
+    }
+
+    const handleKeyDown = (event) => {
+        if(event.key == "Enter"){
+            createNewItem()
+        }
+    };
 
     return(
         <div className="w-screen mx-auto h-auto fondo">
@@ -21,7 +34,7 @@ export const Todo = () => {
                         <div className="h-14 w-14 bg-transparent grid place-content-center">
                             <div className="chekbox h-3 w-3 scale-110 rounded-full p-3 bg-center border border-solid border-custom-light-theme-Dark-Grayish-Blue"></div>
                         </div>
-                        <input onChange={handleChange} value={newToDo} className="w-full font-josefin text-lg py-3 px-2 bg-transparent text-custom-light-theme-Very-Light-Gray" type="text" placeholder="create a new todo"/>
+                        <input onKeyDown={handleKeyDown} onChange={handleChange} value={newToDo} className="w-full font-josefin text-lg py-3 px-2 bg-transparent text-custom-light-theme-Very-Light-Gray" type="text" placeholder="create a new todo"/>
                     </div>
                 </div>
             </div>
