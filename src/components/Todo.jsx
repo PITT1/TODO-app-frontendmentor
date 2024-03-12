@@ -3,6 +3,7 @@ import "../styles/styles.css";
 
 export const Todo = () => {
     const [newToDo, setNewToDo] = useState("");
+    const [item, setItem] = useState([]);
 
     const handleChange = (event) => {
         setNewToDo(event.target.value)
@@ -12,15 +13,16 @@ export const Todo = () => {
         console.log(newToDo);
     }, [newToDo]);
 
-    const createNewItem = () => {
-        
-    }
-
     const handleKeyDown = (event) => {
-        if(event.key == "Enter"){
+        if(event.key == "Enter" && newToDo.trim() !== ''){
             createNewItem()
         }
     };
+
+    const createNewItem = () => {
+        setItem([...item, newToDo]);
+        setNewToDo("");
+    }
 
     return(
         <div className="w-screen mx-auto h-auto fondo">
@@ -37,6 +39,18 @@ export const Todo = () => {
                         <input onKeyDown={handleKeyDown} onChange={handleChange} value={newToDo} className="w-full font-josefin text-lg py-3 px-2 bg-transparent text-custom-light-theme-Very-Light-Gray" type="text" placeholder="create a new todo"/>
                     </div>
                 </div>
+            </div>
+
+            <div className="pt-8">
+                <ul>
+                    {
+                        item.map((item, index) => {
+                            return(
+                                <li key={index} className="my-2">{item}</li>
+                            )
+                        })
+                    }
+                </ul>
             </div>
         </div>
     )
