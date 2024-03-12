@@ -1,10 +1,17 @@
+*{
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
 .fondo{
     background-image: url(../images/bg-desktop-dark.jpg);
     object-fit: cover;
 }
 
 .chekbox {
-    background-image: url(../images/icon-cross.svg);
+    background-image: url(../images/icon-check.svg);
+    background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 640px){

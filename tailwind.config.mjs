@@ -8,7 +8,8 @@ export default {
 		extend: {
 			colors: {
 				'custom-Bright-Blue': 'hsl(220, 98%, 61%)',
-				'custom-Check-Background': 'linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)',
+				'custom-check-gradient1': 'hsl(192, 100%, 67%)',
+				'custom-check-gradient2': 'hsl(280, 87%, 65%)',
 				'custom-light-theme-Very-Light-Gray': 'hsl(0, 0%, 98%)',
 				'custom-light-theme-Very-Light-Grayish-Blue': 'hsl(236, 33%, 92%)',
 				'custom-light-theme-Light-Grayish-Blue': 'hsl(233, 11%, 84%)',
