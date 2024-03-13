@@ -6,7 +6,7 @@ export const Todo = () => {
     const [newToDo, setNewToDo] = useState("");
     const [item, setItem] = useState([]);
 
-    var todoNum = 0;
+    var footerTodoNum = 0;
 
     const handleChange = (event) => {
         setNewToDo(event.target.value)
@@ -26,6 +26,11 @@ export const Todo = () => {
         setNewToDo("");
     }
 
+    const handleClickCross = (index) => {
+        const updateItems = item.filter((_,i) => i !== index);
+        setItem(updateItems);
+    }
+
     return(
         <div className="w-screen mx-auto h-auto fondo">
             <div className='max-w-xl mx-auto'>
@@ -43,15 +48,20 @@ export const Todo = () => {
                         <div className="absolute top-[130%] w-full left-0 bg-custom-dark-theme-Very-Dark-Desaturated-Blue rounded-lg shadow-2xl">
                             <ul className="w-full">
                                 {
-                                item.map((item, index) => {
-                                    const itemClass = index > 0 ? "border-item" : "";
-                                    todoNum = index + 1;
-                                    return(
-                                    <li key={index} className={`${itemClass} cursor-pointer px-4 py-4 font-josefin text-custom-light-theme-Light-Grayish-Blue`}>{item}</li>
-                                    )
-                                })}
+                                    item.map((item, index) => {
+                                        const itemClass = index > 0 ? "border-item" : "";
+                                        footerTodoNum = index + 1;
+                                        return (
+                                            <li key={index} className={`${itemClass} flex justify-between px-4 py-4 font-josefin text-custom-light-theme-Light-Grayish-Blue`}>
+                                                <div className="cursor-pointer">
+                                                    {item}
+                                                </div>
+                                                <button onClick={() => handleClickCross(index)} className="btn-cross bg-no-repeat h-4 w-4 mr-3 mt-1"></button>
+                                            </li>
+                                        )
+                                    })}
                             </ul>
-                            <Footer taskNum={todoNum}/>
+                            <Footer taskNum={footerTodoNum} />
                         </div>
                     </div>
                 </div>

@@ -9,6 +9,10 @@
     object-fit: cover;
 }
 
+.btn-cross {
+    background-image: url(../images/icon-cross.svg);
+}
+
 .chekbox {
     background-repeat: no-repeat;
 }
