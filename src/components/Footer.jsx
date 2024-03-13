@@ -10,7 +10,7 @@ export const Footer = ({taskNum}) => {
                 <button className="hover:text-custom-dark-theme-Light-Grayish-Blue focus:text-custom-Bright-Blue transition-all">completed</button>
             </div>
             <button className="pr-5 py-3 hover:text-custom-dark-theme-Light-Grayish-Blue transition-all">clear completed</button>
-            <h3 className="absolute top-[340%] sm:top-[200%] left-0 w-full text-center">Drag and drop to reorder list</h3>
+            <h3 className="cursor-default absolute top-[340%] sm:top-[200%] left-0 w-full text-center">Drag and drop to reorder list</h3>
         </footer>
     )
 };

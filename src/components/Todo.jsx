@@ -27,7 +27,7 @@ export const Todo = () => {
     }
 
     const handleClickCross = (index) => {
-        const updateItems = item.filter((_,i) => i !== index);
+        const updateItems = item.filter((_,i) => {return(i !== index)});
         setItem(updateItems);
     }
 
@@ -53,8 +53,14 @@ export const Todo = () => {
                                         footerTodoNum = index + 1;
                                         return (
                                             <li key={index} className={`${itemClass} flex justify-between px-4 py-4 font-josefin text-custom-light-theme-Light-Grayish-Blue`}>
-                                                <div className="cursor-pointer">
-                                                    {item}
+                                                <div className="flex">
+                                                    <div className="button">
+                                                        <input type="checkbox" id="custom-btn"/>
+                                                        <label className="lbl-btn"></label>
+                                                    </div>
+                                                    <div className="cursor-pointer">
+                                                        {item}
+                                                    </div>
                                                 </div>
                                                 <button onClick={() => handleClickCross(index)} className="btn-cross bg-no-repeat h-4 w-4 mr-3 mt-1"></button>
                                             </li>
