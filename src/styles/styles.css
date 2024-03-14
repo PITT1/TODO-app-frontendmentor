@@ -21,38 +21,22 @@
     border-top: 1px solid rgba(155, 155, 155, 0.329);
 }
 
-.button {
-    margin-right: 15px;
-    position: relative;
-}
-
-.lbl-btn {
+.dark-light-lbl {
     position: relative;
     display: inline-block;
     height: 20px;
     width: 20px;
-    border-radius: 50%;
-    border: 1px solid rgba(119, 119, 119, 0.445);
+    background-image: url(../images/icon-sun.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
     cursor: pointer;
-    
-    transition: .3s all;
+    transition: .2s all;
 }
 
-.lbl-btn::before {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    height: 99%;
-    width: 99%;
-    background-color: hsl(235, 24%, 19%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#dark-light:checked ~ .dark-light-lbl {
+    background-image: url(../images/icon-moon.svg);
 }
 
-.lbl-btn:hover {
-    background: linear-gradient(120deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-}
 
 @media screen and (max-width: 640px){
     .fondo {

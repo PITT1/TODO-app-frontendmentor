@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	darkMode: 'class',
 	theme: {
 		letterspacing: {
 			superwidest: '5px'
@@ -28,6 +29,12 @@ export default {
 			},
 			letterspacing: {
 				'super-widest': '5px'
+			},
+			backgroundImage: {
+				'bg-dark-mode': "url('/src/images/bg-desktop-dark.jpg')",
+				'bg-light-mode': "url('/src/images/bg-desktop-light.jpg')",
+				'bg-movile-dark-mode': "url('/src/images/bg-mobile-dark.jpg')",
+				'bg-movile-light-mode': "url('/src/images/bg-mobile-light.jpg')"
 			}
 		},
 	},
