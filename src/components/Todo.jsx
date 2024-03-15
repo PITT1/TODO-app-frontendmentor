@@ -39,6 +39,14 @@ export const Todo = () => {
         }
     }
 
+    const changeTrueFalse = (event) => {
+        if (event.target.classList.contains('item-check-true')) {
+            event.target.classList.remove('item-check-true');
+        } else {
+            event.target.classList.add('item-check-true');
+        }
+    }
+
     return(
         <div className="w-screen mx-auto h-auto bg-no-repeat bg-cover bg-bg-movile-light-mode sm:bg-bg-light-mode dark:bg-bg-movile-dark-mode dark:sm:bg-bg-dark-mode transition-all duration-300">
             <div className='max-w-xl mx-auto'>
@@ -65,6 +73,7 @@ export const Todo = () => {
                                         return (
                                             <li key={index} className={`${itemClass} flex justify-between px-4 py-4 font-josefin text-custom-light-theme-Very-Dark-Grayish-Blue dark:text-custom-light-theme-Light-Grayish-Blue transition-all duration-300`}>
                                                 <div className="flex">
+                                                    <div onClick={changeTrueFalse} className="item-check-false item-check-true"></div>
                                                     <div className="cursor-pointer">
                                                         {item}
                                                     </div>
