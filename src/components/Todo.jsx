@@ -73,7 +73,7 @@ export const Todo = () => {
                                         return (
                                             <li key={index} className={`${itemClass} flex justify-between px-4 py-4 font-josefin text-custom-light-theme-Very-Dark-Grayish-Blue dark:text-custom-light-theme-Light-Grayish-Blue transition-all duration-300`}>
                                                 <div className="flex">
-                                                    <div onClick={changeTrueFalse} className="item-check-false item-check-true"></div>
+                                                    <div onClick={changeTrueFalse} className="item-check-false"></div>
                                                     <div className="cursor-pointer">
                                                         {item}
                                                     </div>
